@@ -1,24 +1,24 @@
 package com.xupt.shop.bean;
 
 public class customer {
-    private String name;
+    private String username;
     private String password;
-    private String mail;
+    private int   type;
 
-    public String getName() {
-        return name;
+    public int getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public String getMail() {
-        return mail;
+    public String getUsername() {
+        return username;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
