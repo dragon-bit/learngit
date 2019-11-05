@@ -1,10 +1,10 @@
-package com.xupt.shop.dao;
+package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.collection;
 
 import java.util.List;
 
-public interface Collection_dao {
+public interface CollectionDao {
     //删除收藏商品
     public int deleteCollection(int id);
     //添加收藏商品

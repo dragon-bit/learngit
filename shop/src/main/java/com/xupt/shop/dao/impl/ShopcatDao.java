@@ -4,7 +4,7 @@ import com.xupt.shop.bean.commodity;
 
 import java.util.ArrayList;
 
-public interface shopcat_dao {
+public interface ShopcatDao {
     //添加商品
     public int addCommodity(String name, int shop_id,
                             int price,String img,

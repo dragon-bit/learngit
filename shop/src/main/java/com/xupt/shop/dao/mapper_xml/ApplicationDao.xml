@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xupt.shop.dao.impl.ApplicationDao">
+
+    <insert id="addApplication" parameterType="com.xupt.shop.bean.application">
+        insert into application values (#{id},#{title},#{user_id},#{content},#{status});
+    </insert>
+
+    <delete id="deleteApplication" parameterType="int">
+        delete from application where id=#{id};
+    </delete>
+
+    <select id="findAllCollection" parameterType="int">
+        select * from collection;
+    </select>
+
+    <insert id="addCollection" parameterType="com.xupt.shop.bean.collection">
+        insert into collection values(null,#{user_id},#{commodity_id});
+    </insert>
+
+    <select id="findCollection" parameterType="com.xupt.shop.bean.collection">
+        select * from collection where user_id=#{id};
+    </select>
+</mapper>
