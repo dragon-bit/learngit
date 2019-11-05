@@ -15,5 +15,4 @@
     <!--<delete id="deleteUser">-->
         <!--delete  from user  where id=#{id};-->
     <!--</delete>-->
-
 </mapper>
