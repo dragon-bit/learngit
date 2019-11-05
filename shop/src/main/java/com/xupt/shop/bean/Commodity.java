@@ -1,6 +1,6 @@
 package com.xupt.shop.bean;
 
-public class commodity {
+public class Commodity {
     private int id;
     private String name;
     private int shop_id;

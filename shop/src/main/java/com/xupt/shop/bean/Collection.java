@@ -1,6 +1,6 @@
 package com.xupt.shop.bean;
 
-public class collection {
+public class Collection {
     private int id;
     private int user_id;
     private int commodity_id;
