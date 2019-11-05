@@ -1,4 +1,4 @@
-package com.xupt.shop.dao;
+package com.xupt.shop.dao.impl;
 
 
 import java.util.List;

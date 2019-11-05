@@ -1,8 +1,6 @@
-package com.xupt.shop.service;
+package com.xupt.shop.service.service_do;
 
-import com.xupt.shop.bean.customer;
-import com.xupt.shop.dao.User_dao;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xupt.shop.service.interf.User_s;
 import org.springframework.stereotype.Service;
 
 @Service

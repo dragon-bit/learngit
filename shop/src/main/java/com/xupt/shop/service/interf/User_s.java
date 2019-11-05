@@ -1,4 +1,4 @@
-package com.xupt.shop.service;
+package com.xupt.shop.service.interf;
 
 import com.xupt.shop.bean.customer;
 
