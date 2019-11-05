@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+
+    <delete id="deleteCommodity" parameterType="int">
+        delete from commodity where id=#{id};
+    </delete>
+    <select id="findAllCommodity" parameterType="int">
+        select * from commedity;
+    </select>
+    <update id="updateCommodity" parameterType="com.xupt.shop.bean.commodity">
+        update commodity set name=#{name},price=#{price},img=#{img},introduct=#{introduct},quantity=#{quantity} where id=#{id};
+    </update>
+    <insert id="addCommodity" parameterType="com.xupt.shop.bean.commodity">
+        insert into commodity values(null,#{name},#{shop_id},#{price},#{img},#{introduct},#{quantity});
+    </insert>
+    <select id="findNameCommodity" parameterType="String">
+        select  from commodity where name=%#{name}%;
+    </select>
+</mapper>
