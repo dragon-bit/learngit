@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="238d315d-8b31-4250-b085-83d5b02139f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Orderinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Collection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Commodity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/shopcat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Shopcat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/shops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/bean/Shops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/Collection_dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/Collection_dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/Commodity_dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/Commodity_dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/User_dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/User_dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/Collection_dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/Collection_dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/Commodity_dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/Commodity_dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/User_dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/User_dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/service/interf/User_s.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/service/interf/User_s.java" afterDir="false" />
-    </list>
+    <list default="true" id="238d315d-8b31-4250-b085-83d5b02139f9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,8 +139,16 @@
       <workItem from="1572862378894" duration="2025000" />
       <workItem from="1572943672158" duration="9242000" />
       <workItem from="1572961507210" duration="334000" />
-      <workItem from="1572964964759" duration="2087000" />
+      <workItem from="1572964964759" duration="2389000" />
     </task>
+    <task id="LOCAL-00001" summary="更改了类的命名">
+      <created>1572967145345</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572967145345</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -183,6 +173,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更改了类的命名" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改了类的命名" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
