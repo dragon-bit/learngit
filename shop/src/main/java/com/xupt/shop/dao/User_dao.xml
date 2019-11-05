@@ -2,7 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.User_dao">
-    <insert id="logon" parameterType="String">
-      insert into user  VALUES (null,#{username},#{password});
-  </insert>
+    <!--<select id="login" parameterType="String" resultType="com.xupt.shop.bean.customer">-->
+      <!--select  * from user where username=#{username} and password=#{password};-->
+  <!--</select>-->
+    <!--<select id="find" parameterType="String" resultType="com.xupt.shop.bean.customer">-->
+      <!--select  * from user where username=#{username};-->
+  <!--</select>-->
+    <!--<insert id="addUser">-->
+        <!--insert  into user values (null, #{username}, #{password}, #{type} );-->
+    <!--</insert>-->
+
+    <!--<delete id="deleteUser">-->
+        <!--delete  from user  where id=#{id};-->
+    <!--</delete>-->
+
 </mapper>

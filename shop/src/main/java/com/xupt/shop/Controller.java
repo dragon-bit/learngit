@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @RequestMapping("/test")
     public String getA() {
-        return "123.html";
+        return "login.html";
     }
 }
