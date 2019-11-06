@@ -1,18 +1,18 @@
 package com.xupt.shop.dao.impl;
 
-import com.xupt.shop.bean.application;
+import com.xupt.shop.bean.Application;
 
 import java.util.List;
 
 public interface ApplicationDao {
     //提出申请
-    public int addApplication(application application);
+    public int addApplication(Application application);
     //展示所有申请
-    public List<application> showApplication();
+    public List<Application> showApplication();
     //展示待处理申请
-    public List<application> showWaitApplication();
+    public List<Application> showWaitApplication();
     //展示已处理申请
-    public List<application> showDoneApplication();
+    public List<Application> showDoneApplication();
     //同意申请
     public int agreeApplication(int id);
     //拒绝申请

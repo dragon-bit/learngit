@@ -3,7 +3,7 @@ package com.xupt.shop.dao.impl;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface User_dao {
+public interface UserDao {
 //    @Transactional
 //    customer login(@Param("username")String username, @Param("password")String password);
 //    customer find(@Param("username")String username);

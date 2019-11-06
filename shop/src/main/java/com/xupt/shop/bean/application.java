@@ -1,6 +1,6 @@
 package com.xupt.shop.bean;
 
-public class application {
+public class Application {
     private int id;
     private String title;
     private int user_di;

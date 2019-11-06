@@ -1,4 +1,4 @@
-package com.xupt.shop.service.service_do;
+package com.xupt.shop.service.serviceDo;
 
 import com.xupt.shop.service.interf.User_s;
 import org.springframework.stereotype.Service;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class User_do implements User_s {
 
 //    @Autowired
-//    User_dao user_dao;
+//    UserDao user_dao;
 //    //登录的service层
 //    @Override
 //    public customer regesiter(String username, String password) {

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.impl.ApplicationDao">
 
-    <insert id="addApplication" parameterType="com.xupt.shop.bean.application">
+    <insert id="addApplication" parameterType="com.xupt.shop.bean.Application">
         insert into application values (null,#{title},#{user_id},#{content},#{status});
     </insert>
     <select id="showApplication">
