@@ -1,10 +1,10 @@
-package com.xupt.shop.dao;
+package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.commodity;
 
 import java.util.List;
 
-public interface Commodity_dao {
+public interface CommodityDao {
     //删除商品
     public int deleteCommodity(int id);
     //添加商品
