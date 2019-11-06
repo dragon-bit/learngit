@@ -1,6 +1,6 @@
 package com.xupt.shop.bean;
 
-public class customer {
+public class Customer {
     private String username;
     private String password;
     private int   type;

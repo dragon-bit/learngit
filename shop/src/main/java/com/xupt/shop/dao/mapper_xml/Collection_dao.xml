@@ -9,10 +9,10 @@
     <select id="findAllCollection" parameterType="int">
         select * from collection;
     </select>
-    <insert id="addCollection" parameterType="com.xupt.shop.bean.collection">
+    <insert id="addCollection" parameterType="com.xupt.shop.bean.Collection">
         insert into collection values(null,#{user_id},#{commodity_id});
     </insert>
-    <select id="findCollection" parameterType="com.xupt.shop.bean.collection">
+    <select id="findCollection" parameterType="com.xupt.shop.bean.Collection">
         select * from collection where user_id=#{id};
     </select>
 
