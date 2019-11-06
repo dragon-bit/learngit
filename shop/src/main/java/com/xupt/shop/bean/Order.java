@@ -1,8 +1,9 @@
 package com.xupt.shop.bean;
 
+
 public class Order {
     private String orderNum;
-    private datetime orderTime;
+    private String orderTime;
     private String orderAddr;
 
     public String getOrderNum() {
@@ -13,11 +14,11 @@ public class Order {
         this.orderNum = orderNum;
     }
 
-    public datetime getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(datetime orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
     }
 
