@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="238d315d-8b31-4250-b085-83d5b02139f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/CommentDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ApplicationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/ApplicationDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/ApplicationDao.xml" afterDir="false" />
-    </list>
+    <list default="true" id="238d315d-8b31-4250-b085-83d5b02139f9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,14 +21,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="1" />
-          <entry key="java" value="20" />
+          <entry key="java" value="21" />
           <entry key="properties" value="1" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="21" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="10" />
         </counts>
@@ -60,7 +53,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -73,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/CommodityDao.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="10" column="13" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+              <caret line="10" column="13" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -97,6 +90,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ApplicationDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/CommentDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
@@ -363,7 +368,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573016059074" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573017173501" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -446,12 +451,12 @@
       <workItem from="1572862378894" duration="2025000" />
       <workItem from="1572943672158" duration="9242000" />
       <workItem from="1572961507210" duration="334000" />
-      <workItem from="1573014226692" duration="1830000" />
+      <workItem from="1573014226692" duration="2456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100453000" />
+    <option name="totallyTimeSpent" value="101079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -817,16 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ApplicationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ShopsDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -844,7 +839,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/mapper_xml/CommodityDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -880,6 +875,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/xupt/shop/dao/impl/ApplicationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
