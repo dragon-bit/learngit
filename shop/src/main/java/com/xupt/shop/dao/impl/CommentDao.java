@@ -9,8 +9,8 @@ public interface CommentDao {
     //新建评论
     public int addComment(comment comment);
     //展示商品评论
-    public List<comment> showComment(comment comment);
+    public List<comment> showComment(int id);
     //删除评论
-    public int deleteComment(comment comment);
+    public int deleteComment(int id);
 
 }

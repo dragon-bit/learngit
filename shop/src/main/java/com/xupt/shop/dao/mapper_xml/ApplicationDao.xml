@@ -4,22 +4,24 @@
 <mapper namespace="com.xupt.shop.dao.impl.ApplicationDao">
 
     <insert id="addApplication" parameterType="com.xupt.shop.bean.application">
-        insert into application values (#{id},#{title},#{user_id},#{content},#{status});
+        insert into application values (null,#{title},#{user_id},#{content},#{status});
     </insert>
-
+    <select id="showApplication">
+        select * from application;
+    </select>
+    <select id="showWaitApplication">
+        select * from application where status=0;
+    </select>
+    <select id="showDoneApplication">
+        select * from application where status=1 or status=2 ;
+    </select>
+    <update id="agreeApplication" parameterType="int">
+        update application set status=1 where id=#{id};
+    </update>
+    <update id="refuseApplication" parameterType="int">
+        update application set status=2 where id=#{id};
+    </update>
     <delete id="deleteApplication" parameterType="int">
         delete from application where id=#{id};
     </delete>
-
-    <select id="findAllCollection" parameterType="int">
-        select * from collection;
-    </select>
-
-    <insert id="addCollection" parameterType="com.xupt.shop.bean.collection">
-        insert into collection values(null,#{user_id},#{commodity_id});
-    </insert>
-
-    <select id="findCollection" parameterType="com.xupt.shop.bean.collection">
-        select * from collection where user_id=#{id};
-    </select>
 </mapper>

@@ -8,15 +8,16 @@ public interface ApplicationDao {
     //提出申请
     public int addApplication(application application);
     //展示所有申请
-    public List<application> showApplication(application application);
-    //同意申请
-    public int agreeApplication(application application);
-    //拒绝申请
-    public int refuseApplication(application application);
-    //删除申请
-    public int deleteApplication(application application);
+    public List<application> showApplication();
     //展示待处理申请
-    public List<application> showWaitApplication(application application);
+    public List<application> showWaitApplication();
     //展示已处理申请
-    public List<application> showDoneApplication(application application);
+    public List<application> showDoneApplication();
+    //同意申请
+    public int agreeApplication(int id);
+    //拒绝申请
+    public int refuseApplication(int id);
+    //删除申请
+    public int deleteApplication(int id);
+
 }
