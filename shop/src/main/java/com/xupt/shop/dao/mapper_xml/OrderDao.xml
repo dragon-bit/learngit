@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <insert id="addOrder" parameterType="Order">
+        insert into order values (#{orderNum},#{orderTime},#{orderAddr});
+    </insert>
+    <select id="findOrderByOrderNum" parameterType="String">
+        select * from order where orderNum = #{OrderNum};
+    </select>
+    <select id="findAllOrder">
+        select * from order;
+    </select>
+    <delete id="delOrderByOrderNum" parameterType="String">
+        delete from order where orderNum = #{OrderNum};
+    </delete>
+    <update id="updateOrder" >
+        update order set orderAddr = #{orderAddr} where orderNum = #{orderNum}
+    </update>
+</mapper>
