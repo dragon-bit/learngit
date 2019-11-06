@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+function f() {
+    var  a= document.getElementsByName("userpass")[0].value;
+    var b=/^[a-zA-Z0-9]{6,20}$/;
+    if(!b.exec(a))
+    {
+        alert("密码不符合规定，请修改");
+    }
+    else{
+        window.location.href = 'ser.servlet';
+    }
+}
+</script>
+<form name="myform" >
+    <input type="text" name="username">
+    <input type="password" name="userpass">
+    <input type="submit" value="提交" onclick="f()">
+</form>
+</body>
+</html>
