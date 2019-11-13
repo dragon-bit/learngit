@@ -1,4 +1,4 @@
-package com.xupt.web.shop.confing;
+package com.xupt.shop.confing;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.slf4j.Logger;

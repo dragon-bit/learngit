@@ -3,7 +3,7 @@ package com.xupt.shop.bean;
 public class Application {
     private int id;
     private String title;
-    private int user_di;
+    private int user_id;
     private String content;
     private int status;
 
@@ -23,12 +23,12 @@ public class Application {
         this.title = title;
     }
 
-    public int getUser_di() {
-        return user_di;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUser_di(int user_di) {
-        this.user_di = user_di;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public String getContent() {

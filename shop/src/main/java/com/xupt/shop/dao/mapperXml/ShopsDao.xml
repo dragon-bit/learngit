@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xupt.shop.dao.impl.ShopsDao">
+    <insert id="addShops">
+        insert into shops values (null,#{name},#{user_id},#{introduct});
+    </insert>
+    <delete id="deleteShops" parameterType="int">
+        delete from shops where id=#{id};
+    </delete>
+    <update id="updateShops">
+        update shops set name=#{name} ,introduct=#{introduct}where id=#{id}
+    </update>
+    <select id="findAllShops">
+        set  * from shops where user_id=#{user_id}
+    </select>
+</mapper>

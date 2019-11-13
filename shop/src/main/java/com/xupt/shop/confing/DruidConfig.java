@@ -1,4 +1,4 @@
-package com.xupt.web.shop.confing;
+package com.xupt.shop.confing;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
