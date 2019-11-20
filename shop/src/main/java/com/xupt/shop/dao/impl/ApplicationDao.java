@@ -1,9 +1,17 @@
 package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.Application;
+<<<<<<< HEAD
 
 import java.util.List;
 
+=======
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+
+@Mapper
+>>>>>>> 9beb335425e957313ec95978f46fcb251edd136e
 public interface ApplicationDao {
     //提出申请
     public int addApplication(Application application);

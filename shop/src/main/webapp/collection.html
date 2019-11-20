@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+添加收藏：
+<form action="/addCollection">
+    user_id<input name="user_id" type="text"><br>
+    商品id<input name="commodity_id">
+    <input type="submit" value="提交">
+</form>
+删除收藏：
+<form action="/deleteCollection">
+    商品id<input name="id">
+    <input type="submit" value="提交">
+</form>
+查看收藏:
+<form action="/findCollection">
+    用户id<input name="id">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

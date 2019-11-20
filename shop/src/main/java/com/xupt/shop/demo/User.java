@@ -1,10 +1,15 @@
 package com.xupt.shop.demo;
+import com.xupt.shop.service.serviceDo.ShopsDo;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@MapperScan("com.xupt.shop.dao")
+@MapperScan("com.xupt.shop.dao.impl")
 public class User {
+
 //    @Autowired
 //    User_do user_do;
 //    //登录

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xupt.shop.dao.impl.CommentDao">
+    <insert id="addComment" parameterType="com.xupt.shop.bean.Comment">
+        insert into comment values(null,#{user_id},#{commodity_id},#{content});
+    </insert>
+    <delete id="deleteComment" parameterType="int">
+        delete from comment where id=#{id};
+    </delete>
+    <select id="showComment" parameterType="int">
+        select * from comment where commodity_id=#{id};
+    </select>
+</mapper>
