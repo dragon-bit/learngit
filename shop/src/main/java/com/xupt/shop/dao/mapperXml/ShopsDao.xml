@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.impl.ShopsDao">
-    <insert id="addShops">
+    <insert id="addShops" parameterType="com.xupt.shop.bean.Shops">
         insert into shops values (null,#{name},#{user_id},#{introduct});
     </insert>
     <delete id="deleteShops" parameterType="int">
         delete from shops where id=#{id};
     </delete>
-    <update id="updateShops">
+    <update id="updateShops" parameterType="com.xupt.shop.bean.Shops">
         update shops set name=#{name} ,introduct=#{introduct}where id=#{id}
     </update>
     <select id="findAllShops">

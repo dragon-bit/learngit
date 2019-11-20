@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.xupt.shop.demo")
 @ComponentScan(basePackages = "com.xupt.shop.service")
-@ComponentScan(basePackages = "com.xupt.shop.dao")
 @SpringBootApplication
 public class ShopApplication {
 

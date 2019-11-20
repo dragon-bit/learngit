@@ -6,13 +6,13 @@
     <insert id="addApplication" parameterType="com.xupt.shop.bean.Application">
         insert into application values (null,#{title},#{user_id},#{content},0);
     </insert>
-    <select id="showApplication">
+    <select id="showApplication" resultType="com.xupt.shop.bean.Application">
         select * from application;
     </select>
-    <select id="showWaitApplication">
+    <select id="showWaitApplication" resultType="com.xupt.shop.bean.Application">
         select * from application where status=0;
     </select>
-    <select id="showDoneApplication">
+    <select id="showDoneApplication" resultType="com.xupt.shop.bean.Application">
         select * from application where status=1 or status=2 ;
     </select>
     <update id="agreeApplication" parameterType="int">
