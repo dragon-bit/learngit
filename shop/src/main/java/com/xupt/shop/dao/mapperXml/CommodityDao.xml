@@ -6,8 +6,8 @@
     <delete id="deleteCommodity" parameterType="int">
         delete from commodity where id=#{id};
     </delete>
-    <select id="findAllCommodity" parameterType="int">
-        select * from commedity;
+    <select id="findAllCommodity" parameterType="int" resultType="com.xupt.shop.bean.Commodity">
+        select * from commodity;
     </select>
     <update id="updateCommodity" parameterType="com.xupt.shop.bean.Commodity">
         update commodity set name=#{name},price=#{price},img=#{img},introduct=#{introduct},quantity=#{quantity} where id=#{id};
@@ -15,7 +15,7 @@
     <insert id="addCommodity" parameterType="com.xupt.shop.bean.Commodity">
         insert into commodity values(null,#{name},#{shop_id},#{price},#{img},#{introduct},#{quantity});
     </insert>
-    <select id="findNameCommodity" parameterType="String">
-        select  from commodity where name=%#{name}%;
+    <select id="findNameCommodity" resultType="com.xupt.shop.bean.Commodity">
+        select * from commodity where name like concat('%',#{name},'%') ;
     </select>
 </mapper>
