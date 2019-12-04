@@ -23,12 +23,17 @@ public class ShopsDo implements InterfShops {
 
     @Override
     public int updateShops(Shops shops) {
-        return 0;
+        return shopsDao.updateShops(shops);
     }
 
     @Override
     public List findAllShops(int user_id) {
-        return null;
+        return shopsDao.findAllShops(user_id);
+    }
+
+    @Override
+    public List findShops(String name) {
+        return shopsDao.findShops(name);
     }
 
 }

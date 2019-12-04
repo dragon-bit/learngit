@@ -11,7 +11,10 @@
     <update id="updateShops" parameterType="com.xupt.shop.bean.Shops">
         update shops set name=#{name} ,introduct=#{introduct}where id=#{id}
     </update>
-    <select id="findAllShops">
-        set  * from shops where user_id=#{user_id}
+    <select id="findAllShops" resultType="com.xupt.shop.bean.Shops">
+        select  * from shops where user_id=#{user_id}
+    </select>
+    <select id="findShops" resultType="com.xupt.shop.bean.Shops" >
+        select  * from shops where name like concat('%',#{name},'%')
     </select>
 </mapper>

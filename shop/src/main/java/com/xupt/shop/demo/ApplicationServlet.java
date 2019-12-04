@@ -15,7 +15,7 @@ public class ApplicationServlet {
     @Autowired
     ApplicationDo applicationDo;
     //提交申请
-    @RequestMapping("/addApplication")
+    @RequestMapping("/addApplication1")
     public String addApplication(String title,int userId,String content)
     {
        Application application=new Application();

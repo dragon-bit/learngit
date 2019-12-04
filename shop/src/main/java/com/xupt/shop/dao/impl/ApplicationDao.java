@@ -1,6 +1,11 @@
 package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.Application;
+
+
+import java.util.List;
+
+
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

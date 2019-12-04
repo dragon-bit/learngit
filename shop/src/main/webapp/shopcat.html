@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+购物车中添加商品
+<form action="/addShopcat">
+    用户id<input type="text" name="user_id"/><br>
+    商品id<input type="text" name="commodity_id"/><br>
+    数量<input type="text" name="quantity">
+    <input type="submit" value="确认" />
+</form><br><br><br>
+删除购物车中的商品
+<form action="/deleteShopcat">
+    商品id<input type="text" name="id"/>
+</form><br><br><br>
+查看用户的购物车
+<form action="/findAllShopcat">
+    user_id<input type="text" name="user_id"/><br>
+    <input type="submit" value="确认" />
+</form><br><br><br>
+
+</body>
+</html>
