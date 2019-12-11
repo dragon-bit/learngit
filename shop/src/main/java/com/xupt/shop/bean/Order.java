@@ -1,17 +1,39 @@
 package com.xupt.shop.bean;
 
-
 public class Order {
-    private String orderNum;
-    private String orderTime;
-    private String orderAddr;
+    private long id;            //订单id，数据库中自增字段，同时也是订单号
+    private int shopsId;        //商家id，存储该订单为哪一家商铺的
+    private int userId;         //用户id，存储该订单为哪一用户的订单
+    private String orderTime;   //订单时间
+    private String orderAddr;   //订单地址
+    private int orderStatus;    //订单状态，默认为0，表示订单未配送，1表示订单已完成
 
-    public String getOrderNum() {
-        return orderNum;
+    public int getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setOrderNum(String orderNum) {
-        this.orderNum = orderNum;
+    public void setOrderStatus(int orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public int getShopsId() {
+        return shopsId;
+    }
+
+    public void setShopsId(int shopsId) {
+        this.shopsId = shopsId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getOrderTime() {

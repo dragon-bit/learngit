@@ -15,10 +15,10 @@ public class ApplicationServlet {
     @Autowired
     ApplicationDo applicationDo;
     //提交申请
-    @RequestMapping("/addApplication")
+    @RequestMapping("/addApplication1")
     public String addApplication(String title,int userId,String content)
     {
-       Application application=new Application();
+        Application application=new Application();
         application.setUser_id(userId);
         application.setContent(content);
         application.setTitle(title);
@@ -32,8 +32,8 @@ public class ApplicationServlet {
     @RequestMapping("/findAllApplication")
     public List findAllApplication()
     {
-       List list=applicationDo.findAllApplication();
-       return list;
+        List list=applicationDo.findAllApplication();
+        return list;
     }
     //查看已处理申请
     @RequestMapping("/findYesApplication")

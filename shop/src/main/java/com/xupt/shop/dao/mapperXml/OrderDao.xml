@@ -2,19 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.impl.OrderDao">
-    <insert id="addOrder" >
-        insert into order values (#{orderNum},#{orderTime},#{orderAddr});
+    <resultMap id="BaseResultMap" type="order">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="shops_id" jdbcType="INTEGER" property="shopsId"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="order_time" jdbcType="TIMESTAMP" property="orderTime"/>
+        <result column="order_addr" jdbcType="VARCHAR" property="orderAddr"/>
+        <result column="order_status" jdbcType="INTEGER" property="orderStatus"/>
+    </resultMap>
+    <insert id="addOrder" parameterType="order">
+        insert into order values (#{userId},#{orderTime},#{orderAddr});
     </insert>
-    <select id="findOrderByOrderNum" parameterType="String">
-        select * from order where orderNum = #{OrderNum};
+    <select id="findOrderByUserId" parameterType="int" resultMap="BaseResultMap">
+        select * from order where user_id = #{userId};
     </select>
-    <select id="findAllOrder">
+    <select id="findAllOrder" resultMap="BaseResultMap">
         select * from order;
     </select>
-    <delete id="delOrderByOrderNum" parameterType="String">
-        delete from order where orderNum = #{OrderNum};
+    <select id="findOrderByShopsId" resultMap="BaseResultMap">
+        select * from order where shops_id = #{shopsId};
+    </select>
+    <delete id="delOrderByOrderId" parameterType="long">
+        delete from order where id = #{orderId};
     </delete>
-    <update id="updateOrder" >
-        update order set orderAddr = #{orderAddr} where orderNum = #{orderNum}
+    <update id="updateOrder" parameterType="order">
+        update order set order_addr = #{orderAddr} where id = #{id};
     </update>
 </mapper>
