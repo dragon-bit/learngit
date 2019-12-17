@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+添加商铺
+<form action="/addShops">
+    name<input type="text" name="name"/><br>
+    user_id<input type="text" name="user_id"/><br>
+    introduct<textarea  name="introduct"></textarea>
+    <input type="submit" value="确认" />
+</form><br><br><br>
+删除商铺
+<form action="/deleteShops">
+    id<input type="text" name="id"/>
+    <input type="submit" value="确认" />
+</form><br><br><br>
+修改商铺
+<form action="/updateShops">
+    name<input type="text" name="name"/><br>
+    user_id<input type="text" name="user_id"/><br>
+    introduct<textarea  name="introduct"></textarea>
+    <input type="submit" value="确认" />
+</form><br><br><br>
+查找用户对应商铺
+<form action="/findAllShops">
+    id<input type="text" name="user_id"/>
+    <input type="submit" value="确认" />
+</form><br><br><br>
+查找商铺
+<form action="/findShops">
+    请输入商铺名<input type="text" name="name"/>
+    <input type="submit" value="确认" />
+</form>
+</body>
+</html>

@@ -14,7 +14,7 @@ import java.util.List;
 public class CollectionServlet {
     @Autowired
     CollectionDo collectionDo;
-    //添加订单
+    //添加收藏
     @RequestMapping("/addCollection")
     public  String addCollection(int user_id,int commodity_id )
     { Collections collection=new Collections();
@@ -27,7 +27,7 @@ public class CollectionServlet {
      return "添加失败";
 
     }
-    //删除订单
+    //删除收藏
     @RequestMapping("/deleteCollection")
     public  String deleteCollection(int id )
     {

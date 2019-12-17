@@ -1,10 +1,9 @@
 package com.xupt.shop.bean;
 
 public class User {
-    private int id;
-    private String name;
-    private int type;//1普通用户 2管理员 0 商家
-
+    int id;
+    String name;
+    int type;//1普通用户 2管理员 0 商家
     public int getId() {
         return id;
     }

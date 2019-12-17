@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
@@ -13,7 +12,26 @@
 		<link href="../css/personal.css" rel="stylesheet" type="text/css">
 		<link href="../css/infstyle.css" rel="stylesheet" type="text/css">
 		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
-		<script src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>			
+		<script src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
+		<script type="text/javascript">
+			function f() {
+				var application=$("#application-form").serialize();
+				$.ajax({
+					url:"/addApplication1",
+					data:application,
+					type:"post",
+					async:false,
+					success:function (data) {
+						alert(data);
+					},
+					error:function () {
+						alert("申请失败");
+					}
+				})
+
+			}
+
+		</script>
 	</head>
 
 	<body>
@@ -31,11 +49,11 @@
 
 						<!--个人信息 -->
 						<div class="info-main">
-							<form class="am-form am-form-horizontal">
+							<form class="am-form am-form-horizontal" id="application-form" onsubmit="f()">
 									<div class="am-form-group">
 									<label for="shop-name" class="am-form-label">名称</label>
 									<div class="am-form-content">
-										<input type="text" id="shop-name" placeholder="在此为您的店铺添加名称">
+										<input type="text" name="title" id="shop-name" placeholder="在此为您的店铺添加名称">
                                           <small>店铺名称长度不能超过16个汉字</small>
 									</div>
 								</div>
@@ -43,55 +61,25 @@
 								<div class="am-form-group">
 									<label for="user-name" class="am-form-label">姓名</label>
 									<div class="am-form-content">
-										<input type="text" id="user-name" placeholder="请输入申请人姓名">
+										<input type="text" id="user-name" name="name" placeholder="请输入申请人姓名">
                                          
 									</div>
 								</div>
 									<div class="am-form-group">
 									<label for="user-phone" class="am-form-label">电话</label>
 									<div class="am-form-content">
-										<input type="tel" id="user-phone" placeholder="请输入申请人电话">
+										<input type="tel" id="user-phone" name="telephone" placeholder="请输入申请人电话">
 									</div>
 								</div>
 
 								<div class="am-form-group">
 									<label for="shop-des" class="am-form-label">描述</label>
 									<div class="am-form-content">
-										<input type="text" id="shop-des" placeholder="在此为您的店铺添加描述">
+										<input type="text" name="content" id="shop-des" placeholder="在此为您的店铺添加描述">
 									</div>
 								</div>
-
-<!--
-								<div class="am-form-group">
-									<label for="shop-name" class="am-form-label">店铺名称</label>
-									<div class="am-form-content">
-										<input type="text" id="shop-name" placeholder="在此为您的店铺添加名称">
-									</div>
-								</div>
-
-								<div class="am-form-group">
-									<label for="user-name" class="am-form-label">申请人姓名</label>
-									<div class="am-form-content">
-										<input type="text" id="user-name" placeholder="请输入您的名称">
-                                         
-									</div>
-								</div>
-								<div class="am-form-group">
-									<label for="user-phone" class="am-form-label">申请人电话</label>
-									<div class="am-form-content">
-										<input id="user-phone" placeholder="请输入" type="tel">
-									</div>
-								</div>
-								
-								<div class="am-form-group">
-									<label for="shop-des" class="am-form-label">店铺描述</label>
-									<div class="am-form-content">
-										<input type="text" id="shop-des" placeholder="在此为您的店铺添加描述">
-									</div>
-								</div>
--->
 								<div class="info-btn">
-									<div class="am-btn am-btn-danger">提交申请</div>
+									<input class="am-btn am-btn-danger" type="submit"value="提交申请"/>
 								</div>
 							</form>
 						</div>

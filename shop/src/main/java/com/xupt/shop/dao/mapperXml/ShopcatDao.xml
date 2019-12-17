@@ -2,16 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.impl.ShopcatDao">
-    <insert id="addCommodity">
-        insert  into shopcat values (null,#{name},#{shop_id},{price},{img},{introduct},{quantity})
+    <insert id="addCommodity" parameterType="com.xupt.shop.bean.Shopcat">
+        insert  into shopcat values (null,#{name},#{shop_id},#{price},#{img},#{introduct},#{quantity})
     </insert>
     <delete id="deleteCommodity">
         delete from shopcat where id=#{id}
     </delete>
-    <select id="fingAllCommodity">
+    <select id="fingAllCommodity" resultType="com.xupt.shop.bean.Shopcat">
         select  * from shopcat
     </select>
     <update id="updateCommodity">
         update shopcat set quantity=#{quantity} where id=#{id}
     </update>
+    <select id="selectCommodity" >
+        select  * from shopcat where commodity_id=#{commodity_id}
+    </select>
 </mapper>

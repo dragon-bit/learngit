@@ -3,15 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
-	<link rel="stylesheet" href="../css/demo.css">
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../layui/layui.all.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../layui/css/layui.css">
 </head>
 
 <body>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<button class="btn start">开始</button>
-<!--	<button class="btn start">开始</button>-->
+	<div class="layui-upload-drag" id="test10">
+  <i class="layui-icon"></i>
+  <p>点击上传，或将文件拖拽到此处</p>
+</div>
+<!--这是调用示例-->
+<img src="https://123.56.224.188:443/picture?id=321">
 </body>
 </html>
+
+<script>	
+	layui.use('upload',function(){
+		var $ = layui.jquery,
+			upload = layui.upload;
+		
+		upload.render({
+			elem: '#test10'
+			,url: 'https://123.56.224.188:443/upload?id=' + window.location.href.split("?id=")[1]
+			,done: function(res){
+			  console.log(res)
+			}
+		});
+	});
+</script>

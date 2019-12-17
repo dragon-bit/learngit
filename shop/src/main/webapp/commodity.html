@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+添加商品：
+<form action="/addCommodity">
+    商品名称<input name="name" type="text"><br>
+    商铺id<input name="shop_id" type="text"><br>
+    价格<input name="price" type="text"><br>
+    图片路径<input name="img" type="text"><br>
+    简介<input name="introduct" type="text"><br>
+    数量<input name="quantity" type="text"><br>
+    <input type="submit" value="提交">
+</form>
+删除商品：
+<form action="/deleteCommodity">
+    商品id<input name="id">
+    <input type="submit" value="提交">
+</form>
+查看商品:
+<form action="/findAllCommodity">
+    查看所有
+    <input type="submit" value="提交">
+
+</form>
+根据名称查看商品:
+<form action="/findNameCommodity">
+    商品名称<input name="name">
+    <input type="submit" value="提交">
+
+</form>
+修改商品信息：
+<form action="/updateCommodity">
+    商品id<input name="id" type="text"><br>
+    商品名称<input name="name" type="text"><br>
+    商铺id<input name="shop_id" type="text"><br>
+    价格<input name="price" type="text"><br>
+    图片路径<input name="img" type="text"><br>
+    简介<input name="introduct" type="text"><br>
+    数量<input name="quantity" type="text"><br>
+    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>

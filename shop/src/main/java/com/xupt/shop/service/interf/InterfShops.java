@@ -12,6 +12,7 @@ public interface InterfShops {
     //修改商铺
     public int updateShops(Shops shops);
     //查询用户所有商铺
-    public List findAllShops(int user_id);
-
+    public List findAllShops(int id);
+    //查询商铺
+    public List findShops(String name);
 }

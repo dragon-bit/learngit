@@ -4,19 +4,19 @@
 <mapper namespace="com.xupt.shop.dao.impl.ApplicationDao">
 
     <insert id="addApplication" parameterType="com.xupt.shop.bean.Application">
-        insert into application values (null,#{title},#{user_id},#{content},0);
+        insert into application values (null,#{title},#{user_id},#{content},0,#{name},#{telephone}) ;
     </insert>
     <select id="showApplication" resultType="com.xupt.shop.bean.Application">
-        select * from application;
+        select * from application limit #{ye},8;
     </select>
     <select id="showWaitApplication" resultType="com.xupt.shop.bean.Application">
-        select * from application where status=0;
+        select * from application where status=0 limit #{ye},8;
     </select>
     <select id="showDoneApplication" resultType="com.xupt.shop.bean.Application">
-        select * from application where status=1 or status=2 ;
+        select * from application where status=1 or status=2 limit #{ye},8;
     </select>
     <update id="agreeApplication" parameterType="int">
-        update application set status=1 where id=#{id};
+        update application set status=1 where id=#{id} ;
     </update>
     <update id="refuseApplication" parameterType="int">
         update application set status=2 where id=#{id};
@@ -24,4 +24,10 @@
     <delete id="deleteApplication" parameterType="int">
         delete from application where id=#{id};
     </delete>
+    <select id="findApplicationByName" resultType="com.xupt.shop.bean.Application">
+        select * from application where title like concat('%',#{title},'%');
+    </select>
+    <select id="findApplicationById" resultType="com.xupt.shop.bean.Application">
+        select * from application where id=#{id};
+    </select>
 </mapper>
