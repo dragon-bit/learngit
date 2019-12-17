@@ -1,6 +1,6 @@
 package com.xupt.shop.demo;
 
-import com.xupt.shop.bean.Collection;
+import com.xupt.shop.bean.Collections;
 import com.xupt.shop.service.serviceDo.CollectionDo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import java.util.List;
 public class CollectionServlet {
     @Autowired
     CollectionDo collectionDo;
-    //添加订单
+    //添加收藏
     @RequestMapping("/addCollection")
     public  String addCollection(int user_id,int commodity_id )
-    { Collection collection=new Collection();
+    { Collections collection=new Collections();
      collection.setCommodity_id(commodity_id);
      collection.setUser_id(user_id);
      if(collectionDo.addCollection(collection)>=0)
@@ -27,7 +27,7 @@ public class CollectionServlet {
      return "添加失败";
 
     }
-    //删除订单
+    //删除收藏
     @RequestMapping("/deleteCollection")
     public  String deleteCollection(int id )
     {

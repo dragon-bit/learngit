@@ -5,9 +5,17 @@ public class Commodity {
     private String name;
     private int shop_id;
     private int price;
-    private String img;
     private String introduct;
     private int quantity;
+    private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public int getId() {
         return id;
@@ -41,13 +49,6 @@ public class Commodity {
         this.price = price;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
 
     public String getIntroduct() {
         return introduct;
@@ -71,8 +72,7 @@ public class Commodity {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", shop_id=" + shop_id +
-                ", price=" + price +
-                ", img='" + img + '\'' +
+                ", price=" + price+ '\'' +
                 ", introduct='" + introduct + '\'' +
                 ", quantity=" + quantity +
                 '}';

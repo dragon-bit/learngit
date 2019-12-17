@@ -3,16 +3,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xupt.shop.dao.impl.ShopsDao">
     <insert id="addShops" parameterType="com.xupt.shop.bean.Shops">
-        insert into shops values (null,#{name},#{user_id},#{introduct});
+        insert into shops values (#{id},#{name},#{introduct});
     </insert>
     <delete id="deleteShops" parameterType="int">
         delete from shops where id=#{id};
     </delete>
     <update id="updateShops" parameterType="com.xupt.shop.bean.Shops">
-        update shops set name=#{name} ,introduct=#{introduct}where id=#{id}
+        update shops set name=#{name} ,introduct=#{introduct} where id=#{id};
     </update>
     <select id="findAllShops" resultType="com.xupt.shop.bean.Shops">
-        select  * from shops where user_id=#{user_id}
+        select  * from shops where id=#{id}
     </select>
     <select id="findShops" resultType="com.xupt.shop.bean.Shops" >
         select  * from shops where name like concat('%',#{name},'%')

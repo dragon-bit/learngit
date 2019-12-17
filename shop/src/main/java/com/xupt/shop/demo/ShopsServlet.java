@@ -14,12 +14,12 @@ public class ShopsServlet {
     ShopsDo shopsDo;
     //添加商铺
     @RequestMapping("/addShops")
-    public String addShops(String name,String introduct,int user_id)
+    public String addShops(String name,String introduct,int id)
     {
         Shops shops=new Shops();
         shops.setName(name);
         shops.setIntroduct(introduct);
-        shops.setUser_id(user_id);
+        shops.setId(id);
         if(shopsDo.addShops(shops)>=0)
         {
             return "添加成功";
@@ -28,13 +28,12 @@ public class ShopsServlet {
     }
     //修改商铺
     @RequestMapping("/updateShops")
-    public String updateShops(String name,String introduct,int user_id,int id)
+    public String updateShops(String name,String introduct,int id)
     {
         Shops shops=new Shops();
         shops.setName(name);
-        shops.setId(id);
         shops.setIntroduct(introduct);
-        shops.setUser_id(user_id);
+        shops.setId(id);
         if(shopsDo.updateShops(shops)>=0)
         {
             return "修改成功";
@@ -54,15 +53,15 @@ public class ShopsServlet {
     }
     //查看用户所有商铺
     @RequestMapping("/findAllShops")
-    public List findAllShops(int user_id)
+    public List findAllShops()
     {
-        return shopsDo.findAllShops(user_id);
+        int id=2;
+        return shopsDo.findAllShops(id);
     }
     //查找商铺
     @RequestMapping("/findShops")
     public List findShops(String name)
     {
         return (List) shopsDo.findShops(name);
-
     }
 }

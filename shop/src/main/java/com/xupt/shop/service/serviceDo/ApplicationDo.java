@@ -19,18 +19,18 @@ public class ApplicationDo  implements InterfApplication {
     }
 //查看所有申请
     @Override
-    public List findAllApplication() {
-        return applicationDao.showApplication();
+    public List findAllApplication(int ye) {
+        return applicationDao.showApplication(ye);
     }
     @Override
     //查看已审阅通过申请
-    public List findYesApplication(){
-        return applicationDao.showDoneApplication();
+    public List findYesApplication(int ye){
+        return applicationDao.showDoneApplication(ye);
     }
     @Override
     //查看所有未审阅申请
-    public List findNoApplication(){
-        return  applicationDao.showWaitApplication();
+    public List findNoApplication(int ye){
+        return  applicationDao.showWaitApplication(ye);
     }
 
     //同意申请
@@ -47,6 +47,16 @@ public class ApplicationDo  implements InterfApplication {
 
     public int deleteApplication(int id) {
         return applicationDao.deleteApplication(id);
+    }
+
+    @Override
+    public List findApplicationByName(String title) {
+        return applicationDao.findApplicationByName(title);
+    }
+
+    @Override
+    public Application findApplicationById(int id) {
+        return applicationDao.findApplicationById( id);
     }
 
 }

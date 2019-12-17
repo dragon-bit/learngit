@@ -6,24 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class CommodityServlet {
     @Autowired
     CommodityDo commodityDo;
     @RequestMapping("/addCommodity")
-    public String addCommodity(String name,int shop_id,int price,String img,String introduct,int quantity){
+    public int  addCommodity(String name,String price,String img,String introduct,String quantity){
         Commodity commodity = new Commodity();
+        int shop_id=2;
         commodity.setName(name);
         commodity.setShop_id(shop_id);
-        commodity.setPrice(price);
-        commodity.setImg(img);
+        commodity.setPrice(Integer.valueOf(price) );
         commodity.setIntroduct(introduct);
-        commodity.setQuantity(quantity);
-        if(commodityDo.addCommodity(commodity)>=0)
-            return "添加成功";
-        else return "添加失败";
+        commodity.setQuantity(Integer.valueOf(quantity));
+        return commodityDo.addCommodity(commodity) ;
     }
     @RequestMapping("/deleteCommodity")
     public String deleteCommodity(int id){
@@ -33,13 +34,14 @@ public class CommodityServlet {
     }
 
     @RequestMapping("/updateCommodity")
-    public String updateCommodity(int id,String name,int shop_id,int price,String img,String introduct,int quantity){
+    public String updateCommodity(String id,String name,String price,String introduct,int quantity){
         Commodity commodity = new Commodity();
-        commodity.setId(id);
+        int shop_id=2;
+        System.out.println(123);
+        commodity.setId( Integer.valueOf(id));
         commodity.setName(name);
         commodity.setShop_id(shop_id);
-        commodity.setPrice(price);
-        commodity.setImg(img);
+        commodity.setPrice(Integer.valueOf(price));
         commodity.setIntroduct(introduct);
         commodity.setQuantity(quantity);
         if(commodityDo.updateCommodity(commodity)>=0)
@@ -59,5 +61,34 @@ public class CommodityServlet {
         return list;
     }
 
+    @RequestMapping("/findIdCommodity")
+    public Map findIdCommodity(String name,int page,int limit){
+        page=(page-1)*limit;
+        int id=2;  //id是shop_id
+        Map map =new HashMap();
+        map.put("code",0);
+        map.put("msg","");
+        List <Commodity> list=new ArrayList<>();
+        if(name!=null)
+        {
+            list=commodityDo.findIdCommodityByName(name,id,page,limit);
+            for(Commodity co:list)
+            {
+                co.setImg("<a href='https://127.0.0.1/picture?id="+co.getId()+"' target='_Blank'>查看</a>");
+            }
+            map.put("data",list);
+            map.put("count",commodityDo.findAllCountByName(id,name));
+        }
+        else{
+           list = commodityDo.findIdCommodity(id,page,limit);
+            for(Commodity co:list)
+            {
+                co.setImg("<a href='https://127.0.0.1/picture?id="+co.getId()+"' target='_Blank'>查看</a>");
+            }
+            map.put("data",list);
+            map.put("count",commodityDo.findAllCount(id));
+        }
+        return map;
+    }
 
 }

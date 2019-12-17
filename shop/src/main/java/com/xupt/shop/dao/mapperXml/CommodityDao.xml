@@ -6,16 +6,31 @@
     <delete id="deleteCommodity" parameterType="int">
         delete from commodity where id=#{id};
     </delete>
-    <select id="findAllCommodity" parameterType="int" resultType="com.xupt.shop.bean.Commodity">
+    <select id="findAllCommodity"  resultType="com.xupt.shop.bean.Commodity">
         select * from commodity;
     </select>
     <update id="updateCommodity" parameterType="com.xupt.shop.bean.Commodity">
-        update commodity set name=#{name},price=#{price},img=#{img},introduct=#{introduct},quantity=#{quantity} where id=#{id};
+        update commodity set name=#{name},price=#{price},introduct=#{introduct},quantity=#{quantity} where id=#{id};
     </update>
     <insert id="addCommodity" parameterType="com.xupt.shop.bean.Commodity">
-        insert into commodity values(null,#{name},#{shop_id},#{price},#{img},#{introduct},#{quantity});
+        insert into commodity values(null,#{name},#{shop_id},#{price},#{introduct},#{quantity},null);
+        <selectKey resultType="java.lang.Integer" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
     </insert>
     <select id="findNameCommodity" resultType="com.xupt.shop.bean.Commodity">
         select * from commodity where name like concat('%',#{name},'%') ;
+    </select>
+    <select id="findIdCommodity" resultType="com.xupt.shop.bean.Commodity">
+        select * from commodity where shop_id = #{id} limit #{page},#{limit};
+    </select>
+    <select id="findIdCommodityByName" resultType="com.xupt.shop.bean.Commodity">
+        select * from commodity where shop_id = #{id} and name like concat('%',#{name},'%')limit #{page},#{limit};
+    </select>
+    <select id="findAllCount" resultType="int">
+        SELECT COUNT(*) FROM commodity where shop_id=#{id};
+    </select>
+    <select id="findAllCountByName" resultType="int">
+        SELECT COUNT(*) FROM commodity where shop_id=#{id} and name like concat('%',#{name},'%');
     </select>
 </mapper>

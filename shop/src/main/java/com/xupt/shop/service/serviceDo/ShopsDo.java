@@ -27,8 +27,8 @@ public class ShopsDo implements InterfShops {
     }
 
     @Override
-    public List findAllShops(int user_id) {
-        return shopsDao.findAllShops(user_id);
+    public List findAllShops(int id) {
+        return shopsDao.findAllShops(id);
     }
 
     @Override
