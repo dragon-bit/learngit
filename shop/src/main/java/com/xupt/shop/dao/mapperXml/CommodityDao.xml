@@ -33,4 +33,7 @@
     <select id="findAllCountByName" resultType="int">
         SELECT COUNT(*) FROM commodity where shop_id=#{id} and name like concat('%',#{name},'%');
     </select>
+    <select id="findCommodityById" resultType="com.xupt.shop.bean.Commodity">
+        Select * from commodity where id=#{id};
+    </select>
 </mapper>

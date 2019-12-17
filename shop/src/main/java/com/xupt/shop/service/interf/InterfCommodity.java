@@ -25,4 +25,6 @@ public interface InterfCommodity {
     public int findAllCount(int id);
     //根据名字来查找个数
     public int findAllCountByName(int id,String name);
+    //根据商品id查找商品
+    public Commodity findCommodityById(int id);
 }

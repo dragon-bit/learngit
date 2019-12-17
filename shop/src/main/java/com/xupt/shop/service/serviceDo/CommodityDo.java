@@ -60,4 +60,9 @@ public class CommodityDo implements InterfCommodity {
         return commodityDao.findAllCountByName(id,name);
     }
 
+    @Override
+    public Commodity findCommodityById(int id) {
+        return commodityDao.findCommodityById(id);
+    }
+
 }

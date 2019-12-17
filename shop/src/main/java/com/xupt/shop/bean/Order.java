@@ -8,7 +8,7 @@ public class Order {
     private int userId;         //用户id，存储该订单为哪一用户的订单
     private String orderTime;     //订单时间
     private String orderAddr;   //订单地址
-    private int orderStatus;    //订单状态，默认为0，表示订单未配送，1表示订单已完成
+    private int orderStatus;    //订单状态，默认为0，表示订单未支付，1表示订单已完成，2表示订单已取消
 
     public List<OrderDetail> getOrderDetailList() {
         return orderDetailList;
