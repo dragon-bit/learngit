@@ -4,6 +4,14 @@ public class User {
     int id;
     String name;
     int type;//1普通用户 2管理员 0 商家
+    String address;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
     public int getId() {
         return id;
     }

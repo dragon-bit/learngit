@@ -3,6 +3,7 @@ package com.xupt.shop.service.serviceDo;
 import com.xupt.shop.bean.Commodity;
 import com.xupt.shop.dao.impl.CommodityDao;
 import com.xupt.shop.service.interf.InterfCommodity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,7 +12,7 @@ import java.util.List;
 @Service
 public class CommodityDo implements InterfCommodity {
 
-    @Resource
+    @Autowired
     CommodityDao commodityDao;
 
     @Override
@@ -48,18 +49,18 @@ public class CommodityDo implements InterfCommodity {
     @Override
     public List<Commodity> findIdCommodityByName(String name, int id,int page,int limit) {
         return commodityDao.findIdCommodityByName(name,id,page,limit);
-    }
-
+    }//查找数据个数
     @Override
     public int findAllCount(int id) {
         return commodityDao.findAllCount( id);
     }
-
+    //根据名字查找数据个数
     @Override
     public int findAllCountByName(int id,String name) {
         return commodityDao.findAllCountByName(id,name);
     }
 
+  //根据商品id查找商品
     @Override
     public Commodity findCommodityById(int id) {
         return commodityDao.findCommodityById(id);
