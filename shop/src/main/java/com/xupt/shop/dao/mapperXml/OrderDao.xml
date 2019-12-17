@@ -25,7 +25,7 @@
     <delete id="delOrderByOrderId" parameterType="long">
         delete from `order` where id = #{orderId};
     </delete>
-    <update id="updateOrder" parameterType="order">
-        update `order` set order_addr = #{orderAddr} where id = #{id};
+    <update id="updateOrder">
+        update `order` set order_status = #{status} where id = #{orderId};
     </update>
 </mapper>

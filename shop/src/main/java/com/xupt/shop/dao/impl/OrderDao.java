@@ -2,6 +2,8 @@ package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.Order;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 @Mapper
@@ -16,6 +18,6 @@ public interface OrderDao {
     int delOrderByOrderId(long orderId);
     //添加订单
     int addOrder(Order order);
-    //修改订单地址
-    int updateOrder(Order order);
+    //修改订单状态
+    int updateOrder(@Param("orderId") long orderId, @Param("status") int status);
 }

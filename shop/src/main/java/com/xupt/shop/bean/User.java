@@ -1,17 +1,28 @@
 package com.xupt.shop.bean;
 
 public class User {
-    int id;
-    String name;
-    int type;//1普通用户 2管理员 0 商家
-    String address;
-    public String getAddress() {
-        return address;
+    private int id;
+    private String name;
+    private int type;//1普通用户 2管理员 0 商家
+    private String addr;
+    private String telephone;
+
+    public String getAddr() {
+        return addr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public int getId() {
         return id;
     }

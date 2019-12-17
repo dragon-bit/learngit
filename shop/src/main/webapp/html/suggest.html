@@ -33,7 +33,7 @@
 								<div class="fontTip"><i class="cur">0</i> / <i>200</i></div>
 							</blockquote>
 						</div>
-						<div class="am-btn am-btn-danger anniu">提交</div>
+						<div class="am-btn am-btn-danger anniu" onclick="comment()">提交</div>
 						<p class="suggestTel"><i class="am-icon-phone"></i>客服电话：400-007-1234</p>
 					</div>
 				</div>
@@ -42,5 +42,21 @@
 		</div>
 
 	</body>
+<script>
+	var commodity_id =window.location.href.split("=")[1];
+	console.log(commodity_id);
+	function comment() {
+		var context=document.getElementById("say_some").value;
+		$.ajax({
+			url:"/addComment",
+			type:"POST",
+			data: "id="+commodity_id+"&context="+context,
+			async: false,
+			success: function (data) {
+				alert(data);
+			}
+		})
+	}
+</script>
 
 </html>

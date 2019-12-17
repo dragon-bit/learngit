@@ -40,7 +40,7 @@ public class OrderDo implements InterfOrder {
     }
 
     @Override
-    public int updateOrder(Order order) {
-        return orderDao.updateOrder(order);
+    public int updateOrder(long orderId, int status) {
+        return orderDao.updateOrder(orderId,status);
     }
 }

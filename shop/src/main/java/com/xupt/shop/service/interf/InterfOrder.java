@@ -14,6 +14,6 @@ public interface InterfOrder {
     int delOrderByOrderId(long orderId);
     //添加订单
     int addOrder(Order order);
-    //修改订单地址
-    int updateOrder(Order order);
+    //修改订单状态
+    int updateOrder(long orderId , int status);
 }

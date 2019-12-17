@@ -36,7 +36,7 @@
 
 							<ul class="am-avg-sm-5 am-tabs-nav am-nav am-nav-tabs">
 								<li class="am-active"><a href="#tab1">所有订单</a></li>
-								<li><a href="#tab2">待付款</a></li>
+								<li><a href="#tab2" id="#change">待付款</a></li>
 							</ul>
 
 							<div class="am-tabs-bd">
@@ -72,7 +72,7 @@
 									</div>
 
 								</div>
-								<div class="am-tab-panel am-fade" id="tab2">
+								<div class="am-tab-panel am-fade" id="tab2" >
 
 									<div class="order-top">
 										<div class="th th-item">
@@ -114,49 +114,91 @@
 </html>
 
 <script>
-	$.ajax({
-		url:"/findOrder",
-		type:"GET",
-		success: function(data){
-//			console.log(data);
-			var str = "";
-			for(var i = 0; i < data.count; i++){
-				var it = data.order[i];
-				str += "<div class='order-status5'><div class='order-title'><div class='dd-num'>订单编号：<a href='javascript:'>" + it.order_id + "</a></div><span>成交时间：" + it.time + "</span><em style='margin-left: 50px'>店铺：" + it.shop_name + "</em></div><div class='order-content'><div class='order-left'>"
-				for(var j = 0; j < it.count; j++){
-					str += "<ul class='item-list'><li class='td td-item'><div class='item-pic'><a href='#' class='J_MakePoint'><img src='../images/kouhong.jpg_80x80.jpg' class='itempic J_ItemImg'></a></div><div class='item-info'><div class='item-basic-info'><a href='#'><p>" + it.commodity[j].name + "</p></a></div></div></li><li class='td td-price'><div class='item-price'>" + it.commodity[j].price  + "</div></li><li class='td td-number'><div class='item-number'><span>×</span>" + it.commodity[j].count + "</div></li><li class='td td-operation'><a href='suggest.html'>评价</a><div class='item-operation'></div></li></ul>"
-				}
-				str += "</div><div class='order-right'><li class='td td-amount'><div class='item-amount'>合计：" + it.order_price + "元</div></li><div class='move-right'><li class='td td-status'><div class='item-status'><p class='Mystatus'>" + it.order_status + "</p></div></li><li class='td td-change'><div class='am-btn am-btn-danger anniu'>删除订单</div></li></div></div></div></div>"
-			}
-			document.getElementById("all").innerHTML = str;
-		},
-		error: function(){
-			console.log("error");
-		}
-	})
 
-</script>
-
-<script>
-	$.ajax({
-		url:"/findOrder",
-		type:"GET",
-		success: function(data){
+	function getData() {
+		$.ajax({
+			url: "/findOrder?type=all",
+			type: "GET",
+			success: function (data) {
 //			console.log(data);
-			var str = "";
-			for(var i = 0; i < data.count; i++){
-				var it = data.order[i];
-				str += "<div class='order-status5'><div class='order-title'><div class='dd-num'>订单编号：<a href='javascript:'>" + it.order_id + "</a></div><span>成交时间：" + it.time + "</span><em style='margin-left: 50px'>店铺：" + it.shop_name + "</em></div><div class='order-content'><div class='order-left'>"
-				for(var j = 0; j < it.count; j++){
-					str += "<ul class='item-list'><li class='td td-item'><div class='item-pic'><a href='#' class='J_MakePoint'><img src='../images/kouhong.jpg_80x80.jpg' class='itempic J_ItemImg'></a></div><div class='item-info'><div class='item-basic-info'><a href='#'><p>" + it.commodity[j].name + "</p></a></div></div></li><li class='td td-price'><div class='item-price'>" + (it.commodity[j].price * it.commodity[j].count) + "</div></li><li class='td td-number'><div class='item-number'><span>×</span>" + it.commodity[j].count + "</div></li><li class='td td-operation'><div class='item-operation'></div></li></ul>"
+				let str = "";
+				for (let i = 0; i < data.count; i++) {
+					var it = data.order[i];
+					str += "<div class='order-status5'><div class='order-title'><div class='dd-num'>订单编号：<a href='javascript:'>" + it.order_id + "</a></div><span>成交时间：" + it.time + "</span><em style='margin-left: 50px'>店铺：" + it.shop_name + "</em></div><div class='order-content'><div class='order-left'>"
+					for (let j = 0; j < it.count; j++) {
+						str += "<ul class='item-list'><li class='td td-item'><div class='item-pic'><a href='#' class='J_MakePoint'><img src='../images/kouhong.jpg_80x80.jpg' class='itempic J_ItemImg'></a></div><div class='item-info'><div class='item-basic-info'><a href='#'><p>" + it.commodity[j].name + "</p></a></div></div></li><li class='td td-price'><div class='item-price'>" + it.commodity[j].price / it.commodity[j].count + "</div></li><li class='td td-number'><div class='item-number'><span>×</span>" + it.commodity[j].count + "</div></li><li class='td td-operation'><a href='suggest.html?id="+it.order_id+"'>评价</a><div class='item-operation'></div></li></ul>"
+					}
+					str += "</div><div class='order-right'><li class='td td-amount'><div class='item-amount'>合计：" + it.order_price + "元</div></li><div class='move-right'><li class='td td-status'><div class='item-status'><p class='Mystatus'>" + it.order_status + "</p></div></li><li class='td td-change'><div class='am-btn am-btn-danger anniu' onclick='delOrder(" + it.order_id + ")'>删除订单</div></li></div></div></div></div>"
 				}
-				str += "</div><div class='order-right'><li class='td td-amount'><div class='item-amount'>合计：" + it.order_price + "元</div></li><div class='move-right'><li class='td td-status'><div class='item-status'><p class='Mystatus'>等待买家付款</p><p class='order-info'><a href='#'>取消订单</a></p></div></li><li class='td td-change'><a href='pay.html'><div class='am-btn am-btn-danger anniu'>一键支付</div></a></li></div></div></div></div>"
+				document.getElementById("all").innerHTML = str;
+			},
+			error: function () {
+				console.log("error");
 			}
-			document.getElementById("wait").innerHTML = str;
-		},
-		error: function(){
-			console.log("error");
+		})
+	}
+
+	getData();
+
+	function getDate1() {
+		$.ajax({
+			url: "/findOrder?type=wait",
+			type: "GET",
+			success: function (data) {
+//			console.log(data);
+				let str = "";
+				for (let i = 0; i < data.count; i++) {
+					var it = data.order[i];
+					str += "<div class='order-status5'><div class='order-title'><div class='dd-num'>订单编号：<a href='javascript:'>" + it.order_id + "</a></div><span>成交时间：" + it.time + "</span><em style='margin-left: 50px'>店铺：" + it.shop_name + "</em></div><div class='order-content'><div class='order-left'>"
+					for (let j = 0; j < it.count; j++) {
+						str += "<ul class='item-list'><li class='td td-item'><div class='item-pic'><a href='#' class='J_MakePoint'><img src='../images/kouhong.jpg_80x80.jpg' class='itempic J_ItemImg'></a></div><div class='item-info'><div class='item-basic-info'><a href='#'><p>" + it.commodity[j].name + "</p></a></div></div></li><li class='td td-price'><div class='item-price'>" + it.commodity[j].price / it.commodity[j].count + "</div></li><li class='td td-number'><div class='item-number'><span>×</span>" + it.commodity[j].count + "</div></li><li class='td td-operation'><div class='item-operation'></div></li></ul>"
+					}
+					str += "</div><div class='order-right'><li class='td td-amount'><div class='item-amount'>合计：" + it.order_price + "元</div></li><div class='move-right'><li class='td td-status'><div class='item-status'><p class='Mystatus'>" + it.order_status + "</p><p class='order-info'><a onclick='changeOrder("+it.order_id+")'>取消订单</a></p></div></li><li class='td td-change'><a href='pay.html'><div class='am-btn am-btn-danger anniu'>一键支付</div></a></li></div></div></div></div>"
+				}
+				document.getElementById("wait").innerHTML = str;
+			},
+			error: function () {
+				console.log("error");
+			}
+		})
+	}
+
+	getDate1();
+
+	function delOrder(data) {
+		const flag = confirm("您确认要删除吗？");
+		if(flag) {
+			$.ajax({
+				url: "/delOrderByOrderId",
+				type: "post",
+				data: "orderId=" + data,
+				async: false,
+				success: function (data) {
+					getData();
+					getDate1();
+				},
+				error: function () {
+				}
+			})
 		}
-	})
+	}
+
+	function changeOrder(data) {
+		const flag = confirm("您确认要取消订单吗？");
+		if(flag) {
+			$.ajax({
+				url: "/updateOrder",
+				type: "post",
+				data: "status="+2+"&orderId=" + data,
+				async: false,
+				success: function (data) {
+					getData();
+					getDate1();
+				},
+				error: function () {
+				}
+			})
+		}
+	}
 
 </script>

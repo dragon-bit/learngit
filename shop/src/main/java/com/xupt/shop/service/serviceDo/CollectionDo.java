@@ -29,9 +29,4 @@ public class CollectionDo implements InterfCollection {
     public List findCollectionById(int user_id) {
         return collectionDao.findCollection(user_id);
     }
-
-    @Override
-    public Collections findCollectionById(int user_id, int commodity_id) {
-        return collectionDao.findCollectionById(user_id,commodity_id);
-    }
 }
