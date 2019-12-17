@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+		<title>我的收藏</title>
+
+		<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+		<link href="../css/personal.css" rel="stylesheet" type="text/css">
+		<link href="../css/colstyle.css" rel="stylesheet" type="text/css">
+		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+
+	</head>
+
+	<body>
+		
+		<div class="center">
+			<div class="col-main">
+				<div class="main-wrap">
+
+					<div class="user-collection">
+						<!--标题 -->
+						<div class="am-cf am-padding">
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">我的收藏</strong> / <small>My&nbsp;Collection</small></div>
+						</div>
+						<hr/>
+
+						<div class="you-like">
+							<div class="s-content">
+								<div class="s-item-wrap">
+									<div class="s-item" id="collection">
+
+										<div class="s-pic" >
+										</div>
+									</div>
+								</div>
+									</div>
+						</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+	</body>
+<script>
+	$.ajax({
+		url:"/findCollection",
+		type:"post",
+		async:false,
+		success:function (data) {
+			var str="";
+			var collection=data["collection"];
+			var commodity=data["commodity"];
+			for(var i=0;i<commodity.length;i++)
+			{
+			str+="<div class='s-pic'><a href='#' class='s-pic-link'><img src=\"../images/1-item_pic.jpg_220x220.jpg\"" +
+					"alt='"+commodity[i].name+"' title='"+commodity[i].name+"' " +
+					"class='s-pic-img s-guess-item-img'></a></div><div class=\"s-info\">" +
+					"<div class=\"s-title\"><a href=\"#\" title='"+commodity[i].name+"'>"+commodity[i].name+"</a></div>" +
+					"<div class=\"s-price-box\">" +
+					"<span class=\"s-price\"><em class=\"s-price-sign\">" +
+					"¥</em><em class=\"s-value\">"+commodity[i].price+"</em></span></div></div><div class=\"s-tp\">\n" +
+					"<span  class=\"ui-btn-loading-before\" onclick='qu("+collection[i].id+")' >取消收藏</span>\n" +
+					"<i class=\"am-icon-shopping-cart\"></i>" +
+					"<span class=\"ui-btn-loading-before buy\">加入购物车</span>"+
+					"</div>"
+			}
+			document.getElementById("collection").innerHTML = str;
+		}
+	})
+</script>
+<script>
+	function qu(a) {
+		var flag=confirm("您确认要删除吗？");
+		if(flag)
+		{
+			$.ajax({
+				url: "/deleteCollection",
+				type: "get",
+				data: "id="+ a,
+				async: false,
+				success: function () {
+				},
+				error: function () {
+				}
+			})
+
+		}
+
+
+	}
+</script>
+
+</html>

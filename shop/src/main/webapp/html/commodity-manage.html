@@ -1,189 +1,97 @@
 <!DOCTYPE html>
-<html class="x-admin-sm">
-
-    <head>
-        <meta charset="UTF-8">
-        <title>商品管理</title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <link rel="stylesheet" href="../css/font.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css" media="all">
         <link rel="stylesheet" href="../css/xadmin.css">
-        <script src="../lib/layui/layui.js" charset="utf-8"></script>
-        <script type="text/javascript" src="../js/xadmin.js"></script>
-        <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
-        <!--[if lt IE 9]>
-          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <style>
-            .search:hover{
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="layui-fluid">
-            <div class="layui-row layui-col-space15">
-                <div class="layui-col-md12">
-                    <div class="layui-card">
-                        <div class="layui-card-body ">
-                            <form class="layui-form layui-col-space5" id="kl" >
-                                <div class="layui-inline layui-show-xs-block">
-                                    <input type="text" id="username" name="username"  placeholder="请输入商品名" autocomplete="off" class="layui-input">
-                                </div>
-                                <div class="layui-inline layui-show-xs-block">
-                                    <div class="search" style="width:35px;height:30px;background: #FFA94E;text-align: center;line-height:30px;border-radius:3px;" id="com" ><i class="layui-icon" style="color: white">&#xe615;</i></div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="layui-card-body layui-table-body layui-table-main ">
-                            <table class="layui-table layui-form"  >
-                                <thead>
-                                    <tr>
-                                        <th lay-data="{field:'id', width:120, sort: true}">ID</th>
-                                        <th lay-data="{field:'id', width:120, sort: true}">商品名</th>
-                                        <th lay-data="{field:'username', width:120, sort: true, edit: 'text'}">图片</th>
-                                        <th lay-data="{field:'email', edit: 'text', minWidth: 150}">价格</th>
-                                        <th lay-data="{field:'sex', width:110,templet: '#switchTpl'}">介绍</th>
-                                        <th lay-data="{field:'experience', sort: true, edit: 'text'}">数量</th>
-                                        <th lay-data="{field:'experience', sort: true, edit: 'text'}">操作</th>
-									</tr>
-                                <tbody id="commodity"></tbody>
-                                </thead>
-                            </table>
+    <script type="text/javascript" src="../js/xadmin.js"></script>
+  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
 
-                            <!--<table class="layui-hide" id="test"></table>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script>
-        $("#com").click(function() {
-                var name=document.getElementById("username").value;
-                $.ajax({
-                    url:"/findIdCommodity",
-                    type:"post",
-                    data:"name="+name,
-                    async:false,
-                    success:function (data) {
-                        var str="";
-                        for(var i=0;i<data.length;i++)
-                        {  var v = "";
-                            if(data[i].status === 0){
-                                v="未审核";
-                            }
-                            else{
-                                v="已通过";
-                            }
+ <div class="demoTable" style="margin-top: 20px;margin-left: 20px;">
+搜索：
+<div class="layui-inline">
+ <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+</div>
 
-                            str+= "<tr><td>"+data[i].id+"</td> <td>"
-                                +data[i].name+"</td> " +
-                                "<td>图片</td><td>"+data[i].price+"</td><td>"
-                                +data[i].introduct+"</td> <td class='td-status' id='"
-                                + data[i].id + "'>" + data[i].quantity+"</td><td><button class='layui-btn' value='"
-                                + data[i].id + "' onclick='test(this)'>修改</button> <button  value='"
-                                + data[i].id + "' onclick='remove(this)' class='layui-btn' />删除</button></td></tr>"
-                        }
-                        // $("#t_body").append(str);
-                        document.getElementById("commodity").innerHTML = str;
-                        // $("#t_body").innerHTML = str;
-                    },
-                    error:function () {
-                        alert("无申请");
-                    }
-                })
-        });
-
-        function remove(a) {
-            var flag=confirm("您确认要删除吗？");
-            if(flag)
-            {
-                $.ajax({
-                    url: "/deleteApplication",
-                    type: "get",
-                    data: "id=" + a.value,
-                    async: false,
-                    success: function (data) {
-                        getData()
-                    },
-                    error: function () {
-                    }
-                })
-            }
+<button class="layui-btn" data-type="reload">搜索</button>
+     <a class="layui-btn" type="button" onclick="xadmin.open('在tab打开','./add-commodity.html')">
+         <i class="iconfont">&#xe6b8;</i>添加</a>
+</div>
+<table class="layui-table" lay-filter="test3" id="tab"></table>
 
 
+<script src="../layui/layui.all.js" charset="utf-8"></script>
+<script src="../js/jquery.min.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+	table.render({
+		elem: '#tab',
+		url:'/findIdCommodity',
+		cols:[[
+			{field:'id', width:80, sort: true, title: 'ID'},
+			{field:'name', width:150, sort: true, edit: 'text',title:'商品名'},
+			{field:'img', width: 100,title:'图片'},
+			{field:'price', width:80, edit: 'text',title:'价格'},
+			{field:'introduct', edit: 'text', minWidth: 100,title:'介绍'},
+			{field:'quantity',width:100, sort: true, edit: 'text',title:'数量'}
+		]]
+		,id: 'testReload',
+		page:true
+	});
+  
+  //监听单元格编辑
+  table.on('edit(test3)', function(obj){
+    var value = obj.value //得到修改后的值
+    ,data = obj.data //得到所在行所有键值
+    ,field = obj.field; //得到字段
+	  console.log(data);
+    $.ajax({
+      url:"/updateCommodity",
+      type:"post",
+      data:"id="+data.id+"&name="+data.name+"&price="+data.price+"&introduct="+data.introduct+"&quantity="+data.quantity,
+      success: function(data){
+        console.log("success")
+      },
+      error:function(){
+        console.log("error")
+      }
+	  })
+    layer.msg('[ID: '+ data.name +'] ' + field + ' 字段更改为：'+ value);
+  });
+	
+	var $ = layui.$, active = {
+    reload: function(){
+      var demoReload = $('#demoReload');
+      
+      //执行重载
+      table.reload('testReload', {
+        page: {
+          curr: 1 //重新从第 1 页开始
         }
-    </script>
-    <script type="text/html" id="toolbarDemo">
-        <div class = "layui-btn-container" >
-            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >
-            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>
-        </div >
-    </script>
-    <script type="text/html" id="switchTpl">
-        <!-- 这里的checked的状态只是演示 -->
-        <input type = "checkbox" name = "sex" value = "{{d.id}}" lay-skin = "switch"lay-text = "已上架|已下架" lay-filter = "sexDemo"}} >
-    </script>
-    <script>layui.use('laydate',
-        function() {
-            var laydate = layui.laydate;
+        ,where: {
+            name: demoReload.val()
+        }
+      }, 'data');
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+</script>
 
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#test'
-                ,url:'/findIdCommodity'
-                ,cols: [[
-                    {field:'id', width:80, title: 'ID', sort: true}
-                    ,{field:'name', width:80, title: '商品名'}
-                    ,{field:'price', width:80, title: '价格', sort: true}
-                    ,{field:'introduct', width:80, title: '介绍'}
-                    ,{field:'quantity', title: '数量', minWidth: 150}
-                ]]
-                ,page: true
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#end' //指定元素
-            });
-
-        });</script>
-    <script>layui.use('table',
-        function() {
-            var table = layui.table;
-
-            //监听单元格编辑
-            table.on('edit(test)',
-            function(obj) {
-                var value = obj.value //得到修改后的值
-                ,
-                data = obj.data //得到所在行所有键值
-                ,
-                field = obj.field; //得到字段
-                layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
-            });
-
-            //头工具栏事件
-            table.on('toolbar(test)',
-            function(obj) {
-                var checkStatus = table.checkStatus(obj.config.id);
-                switch (obj.event) {
-                case 'getCheckData':
-                    var data = checkStatus.data;
-                    layer.alert(JSON.stringify(data));
-                    break;
-                case 'getCheckLength':
-                    var data = checkStatus.data;
-                    layer.msg('选中了：' + data.length + ' 个');
-                    break;
-                case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
-                    break;
-                };
-            });
-        });</script>
-
+</body>
 </html>
