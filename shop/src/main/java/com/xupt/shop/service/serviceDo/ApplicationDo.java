@@ -5,11 +5,13 @@ import com.xupt.shop.dao.impl.ApplicationDao;
 import com.xupt.shop.service.interf.InterfApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class ApplicationDo  implements InterfApplication {
-    @Autowired
+    @Resource
     ApplicationDao applicationDao;
 //添加申请
     @Override

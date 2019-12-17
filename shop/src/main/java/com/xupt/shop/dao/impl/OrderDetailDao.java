@@ -2,11 +2,9 @@ package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.OrderDetail;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Mapper
-@Component
 public interface OrderDetailDao {
     //根据订单号查找订单详情
     List<OrderDetail> findOrderDetailByOrderId(long orderId);

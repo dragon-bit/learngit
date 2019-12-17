@@ -2,12 +2,9 @@ package com.xupt.shop.dao.impl;
 
 import com.xupt.shop.bean.Order;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Mapper
-@Component
 public interface OrderDao {
     //查询所有订单
     List<Order> findAllOrder();

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Order</title>
 </head>
 <body>
-<form action="/addApplication">
-    title<input  name="title" type="text"><br>
-    user_id<input name="userId" type="text"><br>
-    内容<textarea name="content"></textarea>
+<form action="/addOrder" method="post">
+    商铺id<input  name="shopsId" type="text"><br>
+    用户id<input name="userId" type="text"><br>
+    用户地址<input name="orderAddr"><br>
     <input type="submit" value="提交">
 </form>
 </body>

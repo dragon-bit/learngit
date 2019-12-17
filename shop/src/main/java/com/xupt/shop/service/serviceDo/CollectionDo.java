@@ -1,6 +1,6 @@
 package com.xupt.shop.service.serviceDo;
 
-import com.xupt.shop.bean.Collection;
+import com.xupt.shop.bean.Collections;
 import com.xupt.shop.dao.impl.CollectionDao;
 import com.xupt.shop.service.interf.InterfCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class CollectionDo implements InterfCollection {
     CollectionDao collectionDao;
     //添加收藏
     @Override
-    public int addCollection(Collection collection) {
+    public int addCollection(Collections collection) {
         return collectionDao.addCollection(collection);
     }
     //删除收藏

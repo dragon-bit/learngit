@@ -7,10 +7,10 @@
         delete from collection where id=#{id};
     </delete>
 
-    <insert id="addCollection" parameterType="com.xupt.shop.bean.Collection">
+    <insert id="addCollection" parameterType="collections">
         insert into collection values(null,#{user_id},#{commodity_id});
     </insert>
-    <select id="findCollection" resultType="com.xupt.shop.bean.Collection">
+    <select id="findCollection" resultType="collections">
         select * from collection where user_id=#{id};
     </select>
 

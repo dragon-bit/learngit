@@ -3,15 +3,15 @@ package com.xupt.shop.service.serviceDo;
 import com.xupt.shop.bean.Order;
 import com.xupt.shop.dao.impl.OrderDao;
 import com.xupt.shop.service.interf.InterfOrder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class OrderDo implements InterfOrder {
 
-    @Autowired
+    @Resource
     OrderDao orderDao;
 
     @Override

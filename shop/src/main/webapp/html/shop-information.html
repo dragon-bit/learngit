@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+		<title>店铺信息</title>
+
+		<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+		<link href="../css/personal.css" rel="stylesheet" type="text/css">
+		<link href="../css/infstyle.css" rel="stylesheet" type="text/css">
+		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<script src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>			
+	</head>
+
+	<body>
+
+		<div class="center">
+			<div class="col-main">
+				<div class="main-wrap">
+
+					<div class="user-info">
+						<!--标题 -->
+						<div class="am-cf am-padding">
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">店铺信息</strong> / <small>Shop&nbsp;information</small></div>
+						</div>
+						<hr/>
+
+						<!--基本信息 -->
+						<div class="user-infoPic">
+
+							<div class="filePic">
+								<input type="file" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
+								<img class="am-circle am-img-thumbnail" src="../images/getAvatar.do.jpg" alt="" />
+							</div>
+
+							<p class="am-form-help">店铺Logo</p>
+
+							<div class="info-m">
+								<div><b>店铺名：<i>卫龙专卖店</i></b></div>
+								<div><b>开店时间：<i>2019-10-01</i></b></div>
+								<div><b>店铺描述：<i>这是卫龙专卖店</i></b></div>
+
+							</div>
+						</div>
+
+						<!--店铺信息 -->
+						<div class="info-main">
+							<form class="am-form am-form-horizontal">
+								
+								<div class="am-form-group">
+									<label for="shop-des" class="am-form-label">描述</label>
+									<div class="am-form-content">
+										<input type="text" id="shop-des" placeholder="在此修改您的店铺描述">
+									</div>
+								</div>
+								<div class="info-btn">
+									<div class="am-btn am-btn-danger">保存修改</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>
